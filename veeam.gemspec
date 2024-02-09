@@ -3,7 +3,7 @@
 require_relative 'lib/veeam/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'integra365'
+  s.name        = 'veeam'
   s.version     = Veeam::VERSION
   s.authors     = ['Janco Tanis']
   s.email       = 'gems@jancology.com'
