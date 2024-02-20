@@ -1,6 +1,5 @@
 require "test_helper"
 
-
 describe 'pager' do
   before do
     Dotenv.load

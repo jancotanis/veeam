@@ -1,4 +1,3 @@
-require 'Dotenv'
 require 'logger'
 require "test_helper"
 

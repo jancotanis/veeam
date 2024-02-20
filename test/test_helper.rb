@@ -1,9 +1,11 @@
 # frozen_string_literal: true
+require 'simplecov'
+SimpleCov.start
 
-$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require 'Dotenv'
-require "veeam"
-require "minitest/autorun"
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require 'dotenv'
+require 'veeam'
+require 'minitest/autorun'
 require 'minitest/spec'
 
 def respond_to_template(template, object, class_name)

@@ -1,4 +1,7 @@
 # Veeam backup API
+[![Version](https://img.shields.io/gem/v/veeam.svg)](https://rubygems.org/gems/veaam)
+[![Maintainability](https://api.codeclimate.com/v1/badges/cf41385233dc8059e8e6/maintainability)](https://codeclimate.com/github/jancotanis/veeam/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/cf41385233dc8059e8e6/test_coverage)](https://codeclimate.com/github/jancotanis/veeam/test_coverage)
 
 This is a wrapper for the Veeam Service Provider Console rest API. You can see the API endpoints here https://helpcenter.veeam.com/docs/vac/rest/reference/vspc-rest.html
 
