@@ -10,7 +10,7 @@ describe 'auth' do
   end
   it "#0 no endpoint" do
     c = Veeam.client({ logger: Logger.new(AUTH_LOGGER) })
-    assert_raises ArgumentError do
+    assert_raises Veeam::ConfigurationError do
       c.login
     end
     Veeam.configure do |config|
@@ -22,7 +22,7 @@ describe 'auth' do
       config.endpoint = ENV["VEEAM_API_HOST"]
     end
     c = Veeam.client({ logger: Logger.new(AUTH_LOGGER) })
-    assert_raises ArgumentError do
+    assert_raises Veeam::ConfigurationError do
       c.login
     end
   end
@@ -32,7 +32,7 @@ describe 'auth' do
       config.access_token = 'api-key-token'
     end
     c = Veeam.client({ logger: Logger.new(AUTH_LOGGER) })
-    assert_raises Faraday::UnauthorizedError do
+    assert_raises Veeam::AuthenticationError do
       c.login
     end
   end
