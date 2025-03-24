@@ -85,7 +85,8 @@ puts client.about.serverVersion
 |.about|/api/v3/about|
 
 ### Companies
-Endpoint for companies related requests 
+
+Endpoint for companies related requests
 
 ```ruby
 companies = client.companies

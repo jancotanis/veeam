@@ -79,11 +79,11 @@ describe 'client' do
     assert value(template.instanceUid).must_equal template_id
 
     # get all templates and check if previous template id is there
-    assert value(@client.alarm_templates.select{ |t| template_id.eql?(t.instanceUid) }.count).must_equal 1, 'template should be retrieved in list'
+    assert value(@client.alarm_templates.select { |t| template_id.eql?(t.instanceUid) }.count).must_equal 1, 'template should be retrieved in list'
 
     # get all event for a template and chekc if all alarm events have same template id
     events = @client.alarm_template_events(template_id)
     assert events.any?, 'events.any?'
-    assert value(@client.alarm_template_events(template_id).select{ |a| template_id.eql?(a.alarmTemplateUid) }.count).must_equal events.count, 'template should be retrieved in list'
+    assert value(@client.alarm_template_events(template_id).select { |a| template_id.eql?(a.alarmTemplateUid) }.count).must_equal events.count, 'template should be retrieved in list'
   end
 end

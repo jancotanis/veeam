@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Veeam
   class Client
     # Defines methods related to the companies resource in the Veeam REST API.
