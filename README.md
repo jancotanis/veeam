@@ -1,11 +1,14 @@
 # Veeam backup API
+
 [![Version](https://img.shields.io/gem/v/veeam.svg)](https://rubygems.org/gems/veaam)
 [![Maintainability](https://api.codeclimate.com/v1/badges/cf41385233dc8059e8e6/maintainability)](https://codeclimate.com/github/jancotanis/veeam/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cf41385233dc8059e8e6/test_coverage)](https://codeclimate.com/github/jancotanis/veeam/test_coverage)
 
-This is a wrapper for the Veeam Service Provider Console rest API. You can see the API endpoints here https://helpcenter.veeam.com/docs/vac/rest/reference/vspc-rest.html
+This is a wrapper for the Veeam Service Provider Console rest API.
+You can see the API endpoints [here](https://helpcenter.veeam.com/docs/vac/rest/reference/vspc-rest.html)
 
-Currently only the GET requests to get a list of tenants and backup job reports are implemented.
+Currently only the GET requests to get a list of tenants and
+backup job reports are implemented.
 
 ## Installation
 
@@ -17,17 +20,22 @@ gem 'veeam'
 
 And then execute:
 
-    $ bundle install
+```console
+> bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install veeam
+```console
+> gem install veeam
+```
 
 ## Usage
 
-Before you start making the requests to API provide the client id and client secret and email/password using the configuration wrapping.
+Before you start making the requests to API provide the client id and client secret and
+email/password using the configuration wrapping.
 
-```
+```ruby
 require 'veeam'
 
 # use do block
@@ -50,20 +58,25 @@ end
 ```
 
 ## Resources
+
 ### Authentication
-```
+
+```ruby
 # setup configuration
 #
 client.login
 ```
+
 |Resource|API endpoint|Description|
 |:--|:--|:--|
-|.login|uses /api/v3/about to chek if creentials are correct|
-
+|.login|/api/v3/about|to check if creentials are correct|
 
 ### About
-Endpoint returns general information about the currently installed version of Veeam Service Provider Console.
-```
+
+Endpoint returns general information about the currently installed version of
+Veeam Service Provider Console.
+
+```ruby
 puts client.about.serverVersion
 ```
 
@@ -73,7 +86,8 @@ puts client.about.serverVersion
 
 ### Companies
 Endpoint for companies related requests 
-```
+
+```ruby
 companies = client.companies
 ```
 
@@ -84,8 +98,10 @@ companies = client.companies
 |TODO other endpoints|...|
 
 ### Infrastructure
+
 Get list of backup servers
-```
+
+```ruby
 server = client.backup_server(id)
 
 ```
@@ -97,10 +113,12 @@ server = client.backup_server(id)
 |TODO other endpoints|...|
 
 ### Alarms
+
 This resource collection represents Veeam Service Provider Console alarms.
-```
+
+```ruby
 client.active_alarms.each do |alarm|
-  if alarms.alarmTemplateUid.eql? "templateUid>"
+  if alarms.alarmTemplateUid.eql? "<templateUid>"
     :
   end
 end
@@ -118,7 +136,7 @@ end
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jancotanis/veeam.
+Bug reports and pull requests are welcome on [GitHub](https://github.com/jancotanis/veeam).
 
 ## License
 
